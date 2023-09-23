@@ -4,6 +4,7 @@
  * swap - swaps integers
  * @a: first element i array
  * @b: second array
+ * Return: no return
  */
 void swap(int *a, int *b)
 {
@@ -17,6 +18,7 @@ void swap(int *a, int *b)
  * selection_sort - sorts array using selction sort algorithm
  * @array: array to sort
  * @size: size of array
+ * Return: no return
  */
 void selection_sort(int *array, size_t size)
 {
