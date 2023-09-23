@@ -28,26 +28,28 @@ int partition_hoare(int *array, int lb, int ub, size_t size)
 	int start, end, pivot, temp;
 
 	pivot = array[lb];
-	start = lb - 1;
-	end = ub + 1;
+	start = lb;
+	end = ub;
 
-	while (1)
+	while (start < end)
 	{
-		do {
+		while (array[start] <= pivot)
 			start++;
-		} while (array[start] < pivot);
-		do {
+		while (array[end] > pivot)
 			end--;
-		} while (array[end] > pivot);
 
-		if (start >= end)
-			return (end);
-		temp = array[start];
-		array[start] = array[end];
-		array[end] = temp;
-		print_array(array, size);
+		if (start < end)
+		{
+			temp = array[start];
+			array[start] = array[end];
+			array[end] = temp;
+			print_array(array, size);
+		}
 	}
-	return (-1);
+	swap(&array[lb], &array[end]);
+	print_array(array, size);
+
+	return (end);
 }
 
 /**
@@ -76,7 +78,7 @@ void sorting_hoare(int *array, int lower, int upper, size_t size)
 	if (lower < upper)
 	{
 		loc = partition_hoare(array, lower, upper, size);
-		sorting_hoare(array, lower, loc, size);
+		sorting_hoare(array, lower, loc - 1, size);
 		sorting_hoare(array, loc + 1, upper, size);
 	}
 }
