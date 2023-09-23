@@ -3,8 +3,8 @@
 /**
  * swap - swaps array
  *
- * @start: first element
- * @end: end element of the array
+ * @a: first element
+ * @b: end element of the array
  */
 void swap(int *a, int *b)
 {
@@ -20,6 +20,8 @@ void swap(int *a, int *b)
  * @array: array to sort
  * @lb: lower bound
  * @ub: upper boung
+ * @size: array size
+ * Return: new end bound
  */
 int partition(int *array, int lb, int ub, size_t size)
 {
@@ -64,10 +66,11 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * sort - sorts array using quick sort algorithm
- * @arrray: array of integers to sort
+ * sorting - sorts array using quick sort algorithm
+ * @array: array of integers to sort
  * @lower: size of array
  * @upper: no return
+ * @size: array size
  */
 void sorting(int *array, int lower, int upper, size_t size)
 {
