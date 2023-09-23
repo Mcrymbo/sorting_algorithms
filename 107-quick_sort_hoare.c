@@ -16,7 +16,7 @@ void swap(int *a, int *b)
 }
 
 /**
- * partition - partitions the array for sorting
+ * partition_hoare - partitions the array for sorting
  * @array: array to sort
  * @lb: lower bound
  * @ub: upper boung
@@ -33,15 +33,13 @@ int partition_hoare(int *array, int lb, int ub, size_t size)
 
 	while (1)
 	{
-		do
-		{
+		do {
 			start++;
 		} while (array[start] < pivot);
-		do
-		{
+		do {
 			end--;
 		} while (array[end] > pivot);
-		
+
 		if (start >= end)
 			return (end);
 		temp = array[start];
@@ -49,11 +47,11 @@ int partition_hoare(int *array, int lb, int ub, size_t size)
 		array[end] = temp;
 		print_array(array, size);
 	}
-	return -1;
+	return (-1);
 }
 
 /**
- * quick_sort - invoks the sorting algorithm
+ * quick_sort_hoare - invoks the sorting algorithm
  * @array: array of integers
  * @size: size of array
  */
@@ -65,7 +63,7 @@ void quick_sort_hoare(int *array, size_t size)
 }
 
 /**
- * sorting - sorts array using quick sort algorithm
+ * sorting_hoare - sorts array using quick sort algorithm
  * @array: array of integers to sort
  * @lower: size of array
  * @upper: no return
