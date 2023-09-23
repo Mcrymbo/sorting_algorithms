@@ -23,26 +23,32 @@ void swap(int *a, int *b)
  */
 int partition(int *array, int lb, int ub, size_t size)
 {
-	int pivot, start, end;
+	int start, end, i;
 
-	pivot = array[lb];
-	start = lb;
-	end = ub;
-	while (start < end)
+	if (lb < ub)
 	{
-		while (array[start] <= pivot)
-			start++;
-		while (array[end] > pivot)
-			end--;
-		if (start < end)
+		start = lb;
+		end = ub;
+		for (i = lb; i < ub; i++)
+		{
+			if (array[i] < array[end])
+			{
+				if (i != start)
+				{
+					swap(&array[i], &array[start]);
+					print_array(array, size);
+				}
+				start++;
+			}
+		}
+		if (start != end && array[start] != array[end])
 		{
 			swap(&array[start], &array[end]);
 			print_array(array, size);
 		}
+
 	}
-	swap(&array[lb], &array[end]);
-	print_array(array, size);
-	return (end);
+		return (start);
 }
 
 /**
