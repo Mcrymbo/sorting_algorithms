@@ -28,5 +28,6 @@ void selection_sort(int *array, size_t size);
 
 void quick_sort_hoare(int *array, size_t size);
 void sorting_hoare(int *array, int lower, int upper, size_t size);
+void shell_sort(int *array, size_t size);
 
 #endif
