@@ -60,7 +60,7 @@ void heap_sort(int *array, size_t size)
 	while (lim > 1)
 	{
 		heap_tree(array, i, size, lim);
-		if (array[i] >= array[lim -1])
+		if (array[i] >= array[lim - 1])
 		{
 			swap(array, i, lim - 1);
 			print_array(array, size);
